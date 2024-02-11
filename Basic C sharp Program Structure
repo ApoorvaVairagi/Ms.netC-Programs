@@ -1,0 +1,12 @@
+/* Basic structure of a C# Program. */
+
+
+using System;
+namespace HelloWorldApplication{    /*Namespace declaration*/
+  class Hello{    /*A class, struct, interface, enum or delegate */
+      static void Main(string[] args){
+      Console.WriteLine("Hello World");
+      Console.ReadLine();
+      }
+  }
+}
