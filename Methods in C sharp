@@ -1,0 +1,73 @@
+/* Concepts related to Methods in C# */
+
+using System;
+
+namespace Demo
+{
+    internal class MethodOverloading
+    {
+       public int add(int a, int y)
+        {
+            return a + y;
+        }
+       public int add(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+
+        public static void studentDetails(int roll, int age, string name, string branch = "Mech")
+        {
+            Console.WriteLine("Roll: " + roll);
+            Console.WriteLine("age: " + age);
+            Console.WriteLine("name: " + name);
+            Console.WriteLine("branch: " + branch);
+            Console.WriteLine("---------------------------");
+        }
+
+        public void employeeDetails(int enroll, int age,string name, string dept, int salaray)
+        {
+            Console.WriteLine("Enroll: " + enroll);
+            Console.WriteLine("age: " + age);
+            Console.WriteLine("name: " + name);
+            Console.WriteLine("dept: " + dept);
+            Console.WriteLine("salary: " + salaray);
+            Console.WriteLine("---------------------------");
+        }
+
+        public static void displayStudentMarks(params int[] marks)
+        {
+            for (int i = 0; i < marks.Length; i++)
+                Console.WriteLine(marks[i]);
+        }
+
+        static void Main(String[] args)
+        {
+            #region Use an object of the class method overloading to call the methods else use static method declaration for direct method call.
+            MethodOverloading m = new MethodOverloading();
+            int result = m.add(1, 2);
+            Console.WriteLine(result);
+            result = m.add(1, 2, 3);
+            Console.WriteLine(result);
+            Console.ReadLine();
+            #endregion
+
+            #region Optional parameters example
+            studentDetails(1, 10, "Alex");
+            studentDetails(2, 13, "Jhon", "CSE");
+            Console.ReadLine();
+            #endregion
+
+            #region Named and positional parameters Sending parameters in any sequencce of order.
+            MethodOverloading n = new MethodOverloading();
+            n.employeeDetails(age: 23, name: "adam", enroll: 1200, dept: "CSE", salaray: 40000);
+            n.employeeDetails(1, 10, "norn", "mech", 20000);
+            Console.ReadLine();
+            #endregion
+
+            #region Param: variable number of arguments. 
+            displayStudentMarks(34, 44, 46, 23);
+            Console.ReadLine();
+            #endregion
+        }
+    }
+}
