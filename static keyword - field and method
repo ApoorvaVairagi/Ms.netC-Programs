@@ -1,0 +1,30 @@
+/* static keyword in C# - fields and methods */
+using System;
+
+namespace DemoCore01
+{
+    internal class Program
+    {
+        static int x = 1;  //static variable
+        int y = 2; //non-static variable
+        static int empId;
+ 
+        static void countNum()
+        {
+            Console.WriteLine(x++);
+        }
+
+  
+        static void Main(String[] args)
+        {
+            #region To test static and non-static properties
+            countNum();
+            Console.WriteLine(x);    /*static field accessed without an object of the class */
+
+            Program p = new Program();
+            Console.WriteLine(p.y);    /* non-static field accessed with a class object */
+            Console.ReadLine();
+            #endregion
+        }
+    }
+}
