@@ -1,0 +1,16 @@
+namespace DemoCore01
+{ 
+    internal class Class1
+    {
+        static int a;
+
+        public static int EmpId { get => a; set => a = value; }
+
+        public static void Main(string[] args)
+        {
+            a = 1000;  // Accessing static property
+            Console.WriteLine(a);
+            Console.ReadLine();
+        }
+    }
+}

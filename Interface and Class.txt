@@ -1,0 +1,27 @@
+namespace DemoCore01
+{ 
+    internal interface ICalculate
+    {
+        double calculateArea(float r);
+        double calculatePeri(int l, int b);
+    }
+    internal class Class1 : ICalculate
+    {
+        public double calculateArea(float r)
+        {
+            return 3.14 * r * r;
+        }
+
+        public double calculatePeri(int l, int b)
+        {
+            return (2 * (l + b));
+        }
+        public static void Main(string[] args)
+        {
+            Class1 c = new Class1();
+            Console.WriteLine(c.calculateArea(3));
+            Console.WriteLine(c.calculatePeri(1, 4));
+            Console.ReadLine();
+        }
+    }
+}
