@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+// Arrays 
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Single dimension array:-");
+            int[] marks = new int[3];
+            marks[0] = 66;
+            marks[1] = 34;
+            marks[2] = 99;
+
+            for(int i=0; i<marks.Length; i++)
+            {
+                Console.Write(marks[i] + " ");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Multi dimension array:-");
+            int[,] marks1 = new int[2, 2]; //2 rows 2 columns
+            marks1[0, 0] = 11;
+            marks1[0, 1] = 22;
+            marks1[1, 0] = 33;
+            marks1[1, 1] = 44;
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.Write(marks1[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Jagged array:-");
+            int[][] jaggedarray = new int[2][];
+            jaggedarray[0] = new int[2] { 1, 2 };
+            jaggedarray[1] = new int[4] { 1, 2, 3, 4 };
+
+            for (int i = 0; i < jaggedarray.Length; i++)
+            {
+                for (int j = 0; j < jaggedarray[i].Length; j++)
+                {
+                  Console.Write(jaggedarray[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadLine();
+        }
+
+    }
+}
